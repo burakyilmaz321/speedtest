@@ -1,9 +1,9 @@
 #!/bin/bash
 
-PYTHON=/home/burak/.conda/envs/py36/bin/python
-AWS=/home/burak/.conda/envs/py36/bin/aws
-JUPYTER=/home/burak/.conda/envs/py36/bin/jupyter
-ROOT=/home/burak/Projects/speedtest
+PYTHON=/usr/bin/python3
+AWS=/home/speedtest/.local/bin/aws
+JUPYTER=/home/speedtest/.local/bin/jupyter
+ROOT=/home/speedtest/speedtest
 
 echo Testing internet speed
 ${PYTHON} ${ROOT}/src/speedtest.py >> ${ROOT}/data/data.csv
@@ -14,5 +14,4 @@ ${JUPYTER} nbconvert --to html \
     --output ${ROOT}/www/index.html
 
 echo Deploying to S3
-${AWS} s3 sync ${ROOT}/www s3://karepalas-speedtest/ \
-    --profile buraky
+${AWS} s3 sync ${ROOT}/www s3://karepalas-speedtest/
