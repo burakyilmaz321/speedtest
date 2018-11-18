@@ -16,4 +16,6 @@ try:
 except:
     pass
 
-print(f'{datetime.datetime.now()},{ping[0]},{download[0]},{upload[0]}')
+print('{},{},{},{}'.format(
+    datetime.datetime.now(), ping[0], download[0], upload[0]
+))
