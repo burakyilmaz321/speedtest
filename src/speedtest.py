@@ -11,7 +11,7 @@ download = re.findall('Download:\s(.*?)\s', response, re.MULTILINE)
 upload = re.findall('Upload:\s(.*?)\s', response, re.MULTILINE)
 
 try:
-    if os.stat('/home/speedtest/data/data.csv').st_size == 0:
+    if os.stat('/home/speedtest/speedtest/data/data.csv').st_size == 0:
         print('Datetime,Ping (ms),Download (Mbit/s),Upload (Mbit/s)')
 except:
     pass
